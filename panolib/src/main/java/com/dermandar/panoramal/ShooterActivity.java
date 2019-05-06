@@ -388,10 +388,16 @@ public class ShooterActivity extends Activity {
                 toastMessage("Panorama ignored");
             } else
                 toastMessage("Panorama saved");
+				Intent intent = new Intent();
+				intent.putExtra(PreviewActivity.EXTRA_IMAGE_PATH, mEquiPath);
+				setResult(Activity.RESULT_OK, intent);
+				finish();
 
+/**
             mDMDCapture.startCamera(ShooterActivity.this, mDisplayMetrics.widthPixels, mDisplayMetrics.heightPixels);
             mTextViewInstruction.setVisibility(View.VISIBLE);
             setInstructionMessage(R.string.instruction_tap_start);
+*/
         }
     }
 
